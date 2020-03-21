@@ -15,9 +15,6 @@ def calculated_filtered_signals(sender, instance, raw, created, *args, **kwargs)
         instance.filtered_temperature = median(last3_temperature)
         last3_humidity = [measurements[2].humidity, measurements[1].humidity, measurements[0].humidity]
         instance.filtered_humidity = median(last3_humidity)
-
-        if abs(instance.temperature - instance.filtered_temperature) > 10 or abs(instance.humidity - instance.filtered_humidity) > 20:
-            instance.valid = False
     else:
         instance.filtered_temperature = instance.temperature
         instance.filtered_humidity = instance.humidity

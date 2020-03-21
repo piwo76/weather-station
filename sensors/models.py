@@ -14,4 +14,3 @@ class DHT22(BaseModel):
     humidity = models.FloatField(default=0.0, validators=[MinValueValidator(0.0), MaxValueValidator(100.0)])
     filtered_temperature = models.FloatField(default=0.0, validators=[MinValueValidator(-50.0), MaxValueValidator(100.0)])
     filtered_humidity = models.FloatField(default=0.0, validators=[MinValueValidator(0.0), MaxValueValidator(100.0)])
-    valid = models.BooleanField(default=True)
